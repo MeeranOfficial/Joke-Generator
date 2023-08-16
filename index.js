@@ -18,47 +18,27 @@ app.get("/", (req, res) => {
 app.post("/", async (req, res) => {
     var apiUrl = "https://v2.jokeapi.dev/joke/";
 
-    var categoryList = [
-        req.body.programming,
-        req.body.misc,
-        req.body.dark,
-        req.body.pun,
-        req.body.spooky,
-        req.body.christmas 
-    ];
+    var categoryLists = req.body.category;
+    var blacklists = req.body.blacklist;
     
-    var blacklistFlagsList = [
-        req.body.nsfw,
-        req.body.religious,
-        req.body.political,
-        req.body.racist,
-        req.body.sexist,
-        req.body.explicit
-    ];
-    
-    //Removing undefined from unchecked values
-    categoryList = categoryList.filter(function(elem) {
-        return elem !== undefined
-    });
-
-    blacklistFlagsList = blacklistFlagsList.filter(function(elem) {
-        return elem !== undefined
-    });
-
-    if(categoryList.length === 0) {
-        categoryList.push("Any");
+    if(categoryLists !== undefined) {
+        apiUrl += categoryLists.toString();
+    } else {
+        apiUrl += "Any";
     }
 
-    apiUrl += categoryList.toString() + "?format=txt";
+    apiUrl += "?format=txt";
 
-    if(blacklistFlagsList.length !== 0) {
-        apiUrl += "&blacklistFlags=" + blacklistFlagsList.toString();
+    if(blacklists !== undefined) {
+        apiUrl += "&blacklistFlags=" + blacklists.toString();
     }
+
+    // console.log(apiUrl); 
 
     try {        
         const result = await axios.get(apiUrl);   
-        res.render("index.ejs", {content: result.data, buttonClicked: true});
-    } catch (error) {
+        res.render("index.ejs", {content: result.data, categoryLists: categoryLists, blacklists: blacklists, buttonClicked: true});
+    } catch (error) { 
         console.log(error.response.data);
         res.send(500);
     }

@@ -26,32 +26,38 @@
                             <h3 class="mb-3 text-dark"> Categories </h3>
                                                     
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" name="programming" value="Programming">
+                                <input class="form-check-input" type="checkbox" role="switch" name="category" value="Programming" 
+                                    <% if(locals.categoryLists && categoryLists.includes("Programming")) { %> checked <% } %> >
                                 <label class="form-check-label" for="programming">Programming</label>
                             </div>            
 
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" name="misc" value="Miscellaneous">
+                                <input class="form-check-input" type="checkbox" role="switch" name="category" value="Miscellaneous"
+                                    <% if(locals.categoryLists && categoryLists.includes("Miscellaneous")) { %> checked <% } %> >
                                 <label class="form-check-label" for="misc">Miscellaneous</label>
                             </div>
 
                             <div class="form-check form-switch">                    
-                                <input class="form-check-input" type="checkbox" role="switch" name="dark" value="Dark">
+                                <input class="form-check-input" type="checkbox" role="switch" name="category" value="Dark"
+                                    <% if(locals.categoryLists && categoryLists.includes("Dark")) { %> checked <% } %> >
                                 <label class="form-check-label" for="dark">Dark</label>
                             </div>
 
                             <div class="form-check form-switch">                    
-                                <input class="form-check-input" type="checkbox" role="switch" name="pun" value="Pun">
+                                <input class="form-check-input" type="checkbox" role="switch" name="category" value="Pun"
+                                    <% if(locals.categoryLists && categoryLists.includes("Pun")) { %> checked <% } %> >
                                 <label class="form-check-label" for="pun">Pun</label>
                             </div>
 
                             <div class="form-check form-switch">                    
-                                <input class="form-check-input" type="checkbox" role="switch" name="spooky" value="Spooky">
+                                <input class="form-check-input" type="checkbox" role="switch" name="category" value="Spooky"
+                                    <% if(locals.categoryLists && categoryLists.includes("Spooky")) { %> checked <% } %> >
                                 <label class="form-check-label" for="spooky">Spooky</label>
                             </div>
 
                             <div class="form-check form-switch">                    
-                                <input class="form-check-input" type="checkbox" role="switch" name="christmas" value="Christmas">
+                                <input class="form-check-input" type="checkbox" role="switch" name="category" value="Christmas"
+                                    <% if(locals.categoryLists && categoryLists.includes("Christmas")) { %> checked <% } %> >
                                 <label class="form-check-label" for="christmas">Christmas</label>
                             </div>
                         </div>                
@@ -83,32 +89,38 @@
                             <h3 class="mb-3 text-dark"> Black List </h3>
 
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" name="nsfw" value="nsfw">
+                                <input class="form-check-input" type="checkbox" role="switch" name="blacklist" value="nsfw"
+                                    <% if(locals.blacklists && blacklists.includes("nsfw")) { %> checked <% } %> >
                                 <label class="form-check-label" for="nsfw">NSFW</label>
                             </div>            
 
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" name="religious" value="religious">
+                                <input class="form-check-input" type="checkbox" role="switch" name="blacklist" value="religious"
+                                    <% if(locals.blacklists && blacklists.includes("religious")) { %> checked <% } %> >
                                 <label class="form-check-label" for="misc">Religious</label>
                             </div>
 
                             <div class="form-check form-switch">                    
-                                <input class="form-check-input" type="checkbox" role="switch" name="political" value="political">
+                                <input class="form-check-input" type="checkbox" role="switch" name="blacklist" value="political"
+                                    <% if(locals.blacklists && blacklists.includes("political")) { %> checked <% } %> >
                                 <label class="form-check-label" for="political">Political</label>
                             </div>
 
                             <div class="form-check form-switch">                    
-                                <input class="form-check-input" type="checkbox" role="switch" name="racist" value="racist">
+                                <input class="form-check-input" type="checkbox" role="switch" name="blacklist" value="racist"
+                                    <% if(locals.blacklists && blacklists.includes("racist")) { %> checked <% } %> >
                                 <label class="form-check-label" for="racist">Racist</label>
                             </div>
 
                             <div class="form-check form-switch">                    
-                                <input class="form-check-input" type="checkbox" role="switch" name="sexist" value="sexist">
+                                <input class="form-check-input" type="checkbox" role="switch" name="blacklist" value="sexist"
+                                    <% if(locals.blacklists && blacklists.includes("sexist")) { %> checked <% } %> >
                                 <label class="form-check-label" for="sexist">Sexist</label>
                             </div>
 
                             <div class="form-check form-switch">                    
-                                <input class="form-check-input" type="checkbox" role="switch" name="explicit" value="explicit">
+                                <input class="form-check-input" type="checkbox" role="switch" name="blacklist" value="explicit"
+                                    <% if(locals.blacklists && blacklists.includes("explicit")) { %> checked <% } %> >
                                 <label class="form-check-label" for="explicit">Explicit</label>
                             </div>
                         </div>                    
